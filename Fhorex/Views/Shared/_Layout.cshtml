@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Fhorex Group Ltd</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Fhorex", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("About", "Index", "Home")</li>*@
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">About</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("About Fhorex", "AboutCompany", "About")</li>
+                            <li>@Html.ActionLink("Team & Management", "TeamAndManagement", "About")</li>
+                            <li>@Html.ActionLink("Company History", "CompanyHistory", "About")</li>
+                            <li>@Html.ActionLink("Company News", "CompanyNews", "About")</li>
+                            <li>@Html.ActionLink("Careers", "Careers", "About")</li>
+                            <li>@Html.ActionLink("Security of Funds", "SecurityofFunds", "About")</li>
+                            <li>@Html.ActionLink("Legal Documents", "LegalDocuments", "About")</li>
+                            <li>@Html.ActionLink("Risk Prevention", "RiskPrevention", "About")</li>
+                            <li>@Html.ActionLink("Privacy", "Privacy", "About")</li>
+                            <li>@Html.ActionLink("FAQ", "FAQ", "About")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Download", "Download", "Products")</li>
+                            <li>@Html.ActionLink("Economic Calender", "EconomicCalender", "Products")</li>
+                            <li>@Html.ActionLink("Mobile Platform", "MobilePlatform", "Products")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Accounts</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Types of Accounts", "TypesofAccounts", "Accounts")</li>
+                            <li>@Html.ActionLink("Deposit & Withdrawals", "DepositandWithdrawals", "Accounts")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Promotions</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Bonuses", "Bonuses", "Promotions")</li>
+                            <li>@Html.ActionLink("Promotions", "Promotions", "Promotions")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Partnership</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Affiliate Partnership", "AffiliatePartnership", "Partnership")</li>
+                            <li>@Html.ActionLink("Company Partnership", "CompanyPartnership", "Partnership")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <h4>True Successful Investment with fhorex</h4>
+                    <div class="col-md-2">
+                        <h5>CONTACT US</h5>
+                        <div style="list-style-type:none">
+                        <li>support@fhorex.com</li>
+                        <li>+44-1173253396</li>
+                        <li>Live Chat</li>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h5>ABOUT</h5>
+                        <div style="list-style-type:none">
+                        <li>@Html.ActionLink("About Fhorex", "AboutCompany", "About")</li>
+                        <li>@Html.ActionLink("Team & Management", "TeamAndManagement", "About")</li>
+                        <li>@Html.ActionLink("Company History", "CompanyHistory", "About")</li>
+                        <li>@Html.ActionLink("Company News", "CompanyNews", "About")</li>
+                        <li>@Html.ActionLink("Careers", "Careers", "About")</li>
+                        <li>@Html.ActionLink("Security of Funds", "SecurityofFunds", "About")</li>
+                        <li>@Html.ActionLink("Legal Documents", "LegalDocuments", "About")</li>
+                        <li>@Html.ActionLink("Risk Prevention", "RiskPrevention", "About")</li>
+                        <li>@Html.ActionLink("Privacy", "Privacy", "About")</li>
+                        <li>@Html.ActionLink("FAQ", "FAQ", "About")</li>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h5>PRODUTCS</h5>
+                        <div style="list-style-type:none">
+                        <li>@Html.ActionLink("Download", "Download", "Products")</li>
+                        <li>@Html.ActionLink("Economic Calender", "EconomicCalender", "Products")</li>
+                        <li>@Html.ActionLink("Mobile Platform", "MobilePlatform", "Products")</li>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h5>ACCOUNTS</h5>
+                        <div style="list-style-type:none">
+                        <li>@Html.ActionLink("Types of Accounts", "TypesofAccounts", "Accounts")</li>
+                        <li>@Html.ActionLink("Deposit & Withdrawals", "DepositandWithdrawals", "Accounts")</li>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h5>PROMOTIONS</h5>
+                        <div style="list-style-type:none">
+                        <li>@Html.ActionLink("Bonuses", "Bonuses", "Promotions")</li>
+                        <li>@Html.ActionLink("Promotions", "Promotions", "Promotions")</li>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h5>PARTNERSHIP</h5>
+                        <div style="list-style-type:none">
+                        <li>@Html.ActionLink("Affiliate Partnership", "AffiliatePartnership", "Partnership")</li>
+                        <li>@Html.ActionLink("Company Partnership", "CompanyPartnership", "Partnership")</li>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <img src="~/Content/Images/Fhorex.com (Official Logo) Gray Color.png" height="100px" width="170px"/>
+                <br/>
+                @Html.ActionLink("Client Agreement", "ClientAgreement", "Downloads") &nbsp;&nbsp; @Html.ActionLink("Risk Disclosure", "RiskDisclosure", "Downloads") &nbsp;&nbsp; @Html.ActionLink("Anti-Money Laundering", "AntiMoneyLaundering", "Downloads")
+                <br/>
+                @Html.ActionLink("Legal Documents", "LegalDocuments", "Downloads") &nbsp;&nbsp; @Html.ActionLink("Terms & Condition", "TermsAndCondition", "Downloads")
+                <br/><br/>
+                <p>The Website of www.fhorex.com is operated by Fhorex Limited. (registered number 10955007 (CH 2017). Fhorex Limited is an International Business Company in 40 Gracechurch Street, London, United Kingdom, EC3V OBT. Fhorex Limited is a member of Fhorex Group; authorised and approved by FRSC.ORG.UK (Financial Regulation Service Commission). License Number 990740. Fhorex Limited operates the website www.fhorex.com. And registered in the United Kingdom government companies House.
+                Company Number: 10955007)</p>
+                <br />
+                <p>The information on this website may only be copied with the express written permission of Fhorex.
+                   General Risk Warning: CFDs are leveraged products. Trading in CFDs carries a high level of risk thus may not be appropriate for all investors. The investment value can both increase and decrease and the investors may lose all their invested capital. Under no circumstances shall the company have any liability to any person or entity for any loss or damage in whole or part caused by, resulting from, or relating to any transactions related to CFDs.
+                   &copy; 2017-18.Fhorex LTD</p>
+                <br/>
+                <p style="text-align:center">&copy; All Rights Reserved</p>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
