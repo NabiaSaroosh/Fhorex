@@ -1,24 +1,60 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿/* custom fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html, body{ box-sizing:; font-family: Open Sans; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    padding: 0;
+    margin: 0;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
+/*
+    -----------
+    navbar code
+    -----------
 */
-.dl-horizontal dt {
-    white-space: normal;
-}
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
+/*top nav*/
+.top-nav { height: 50px; background-color: #222; }
+.top-nav .top-nav-container { max-width: 1000px; margin: 0 auto; }
+/*logo*/ 
+/*.navbar-brand{ padding: 0; margin: 0; }*/
+.navbar-brand img{ width:250px; height:60px; padding: 0;}
+.navbar-inverse{ border: none; border-radius: 0px; margin: 0; }
+.navbar-inverse .navbar-nav > li > a{ }
+
+
+/*slider*/
+.carousel-inner > .item > img, .carousel-inner > .item > a > img { width: 100%; height: 600px; }
+#content-slider .carousel-inner > .item > img, .carousel-inner > .item > a > img { width: 100%; height: 357px; }
+#content-slider { position: relative; }
+#content-slider .open_account_panel { width: 100%; height: 357px; padding: 130px 0px; position: absolute; top: 0; left: 0; background-color: greenyellow; z-index: 999; display: none; transition: .4s all; }
+.openaccount_panel { display: block !important; }
+#content-slider .open_account_panel label { font-size: 30px; padding-top: 10px; }
+#content-slider .open_account_panel input[type=email] { height: 62px; border-radius: 0px; }
+#content-slider .open_account_panel .next { height: 60px; width: 200px; border: none; background: #222; color: #fff; }
+#content-slider .open_account_panel .close_account_panel { height: 60px; border: none; cursor: pointer; background: transparent; color: #aaa; font-size: 20px; }
+
+/* open account button */
+.carousel .open_account_btn{ position: absolute; font-weight: 800; cursor: pointer; color: #222; background-color: greenyellow; height: 50px; line-height: 50px; padding: 0px 20px; width: 250px; bottom: 50px; left: 20px; border-radius: 10px; }
+.carousel .open_account_btn i { right: 10px; position: absolute; font-size: 20px; }
+
+/*home page image overlays*/
+.home_image_overlay { width: 50%; height: 400px; overflow: hidden; float:left; position: relative;}
+.home_image_overlay:hover img { transform: scale(1.10); }
+.home_image_overlay img { width: 100%; height: 400px; transition: .4s all; }
+.home_image_overlay .overlay-inner { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;padding: 80px; }
+.home_image_overlay .overlay-inner p { color: #fff; font-size: 40px; font-weight: 100; }
+.home_image_overlay .overlay-inner a { color: greenyellow; }
+
+/*login panel*/
+.login-panel { width: 100%; height: 200px; background: #222; display: none; padding: 80px 40px; }
+.login-panel input[type=email], input[type=password]{ height: 50px; border-radius: 0px; font-size: 20px; }
+.login-panel button { background-color: greenyellow; height: 50px; border: none; width: 200px; text-align: left; padding: 0px 20px; font-weight: 800; }
+.login-panel label { color: #fff; font-size: 30px; }
+.login-panel a { color: #fff; text-decoration: underline; }
+.login-panel .close_login_panel { color: #444; padding-left: 20px; font-size: 20px; }
