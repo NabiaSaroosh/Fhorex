@@ -10,6 +10,13 @@
     <link href="~/Content/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
 </head>
 <body>
+    @* search bar overlay *@
+    <div class="search_overlay">
+        <input type="search"  class="search_result" placeholder="search" autofocus/>
+        <button class="cancel_search">
+            <i class="ion-android-close"></i>
+        </button>
+    </div>
     @* login panel *@
 
     <div class="login-panel">
@@ -39,17 +46,26 @@
         <div class="top-nav-container">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="">HAmza</a>
+                    <a href="">NEWS</a>
                 </li>
                 <li>
-                    <a href="">HAmza</a>
+                    <a href="">LIBRARY</a>
                 </li>
                 <li>
-                    <a href="">HAmza</a>
+                    <a href="">FAQ</a>
+                </li>
+                <li>
+                    <a href="">CONTACTS</a>
                 </li>
             </ul>
-            <ul class="navbar-right">
-                @Html.Partial("_LoginPartial")
+            <ul class="nav navbar-nav navbar-right">
+                @*@Html.Partial("_LoginPartial")*@
+                <li>
+                    <a href="" class="yello-btn"><i class="ion-person-add"></i> REGISTER</a>
+                </li>
+                <li>
+                    <a class="yello-btn" id="login_panel"><i class="ion-lock-combination"></i> SIGN IN</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -61,11 +77,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Fhorex", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @*<div class="navbar-brand">
-                    <a href="">
+                @*@Html.ActionLink("Fhorex", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                    <a href="" class="navbar-brand">
+                        <img src="~/Content/Official Logo/Fhorex.com (Official Logo) yellow and white.png" /> Fhorex
                     </a>
-                </div>*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -116,79 +131,134 @@
                     </li>
                     <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
                 </ul>
-                
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="">
+                            +44 1173253396
+                        </a>
+                    </li>
+                    <li>
+                        <a class="yello-btn" id="search_result">
+                            <i class="ion-android-search"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
     <div class="">
         @RenderBody()
         <hr />
+        
         <footer>
+            <div class="row">
+            <div class="">
+                <div class="footer-strip">
+                    <i class="ion-trophy"></i> True Successful Investment with fhorex
+                    <div class="footer-social">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-line-chart"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
             <div class="container">
                 <div class="row">
-                    <h4>True Successful Investment with fhorex</h4>
                     <div class="col-md-2">
                         <h5>CONTACT US</h5>
-                        <div style="list-style-type:none">
-                        <li>support@fhorex.com</li>
-                        <li>+44-1173253396</li>
-                        <li>Live Chat</li>
-                        </div>
+                        <ul style="list-style-type:none">
+                            <li><i class="ion-ios-briefcase-outline"></i> support@fhorex.com</li>
+                            <li><i class="ion-ios-telephone-outline"></i> +44-1173253396</li>
+                            <li><i class="ion-ios-chatbubble-outline"></i> Live Chat</li>
+                        </ul>
                     </div>
                     <div class="col-md-2">
                         <h5>ABOUT</h5>
-                        <div style="list-style-type:none">
-                        <li>@Html.ActionLink("About Fhorex", "AboutCompany", "About")</li>
-                        <li>@Html.ActionLink("Team & Management", "TeamAndManagement", "About")</li>
-                        <li>@Html.ActionLink("Company History", "CompanyHistory", "About")</li>
-                        <li>@Html.ActionLink("Company News", "CompanyNews", "About")</li>
-                        <li>@Html.ActionLink("Careers", "Careers", "About")</li>
-                        <li>@Html.ActionLink("Security of Funds", "SecurityofFunds", "About")</li>
-                        <li>@Html.ActionLink("Legal Documents", "LegalDocuments", "About")</li>
-                        <li>@Html.ActionLink("Risk Prevention", "RiskPrevention", "About")</li>
-                        <li>@Html.ActionLink("Privacy", "Privacy", "About")</li>
-                        <li>@Html.ActionLink("FAQ", "FAQ", "About")</li>
-                        </div>
+                        <ul style="list-style-type:none">
+                            <li>@Html.ActionLink("About Fhorex", "AboutCompany", "About")</li>
+                            <li>@Html.ActionLink("Team & Management", "TeamAndManagement", "About")</li>
+                            <li>@Html.ActionLink("Company History", "CompanyHistory", "About")</li>
+                            <li>@Html.ActionLink("Company News", "CompanyNews", "About")</li>
+                            <li>@Html.ActionLink("Careers", "Careers", "About")</li>
+                            <li>@Html.ActionLink("Security of Funds", "SecurityofFunds", "About")</li>
+                            <li>@Html.ActionLink("Legal Documents", "LegalDocuments", "About")</li>
+                            <li>@Html.ActionLink("Risk Prevention", "RiskPrevention", "About")</li>
+                            <li>@Html.ActionLink("Privacy", "Privacy", "About")</li>
+                            <li>@Html.ActionLink("FAQ", "FAQ", "About")</li>
+                        </ul>
                     </div>
                     <div class="col-md-2">
                         <h5>PRODUTCS</h5>
-                        <div style="list-style-type:none">
-                        <li>@Html.ActionLink("Download", "Download", "Products")</li>
-                        <li>@Html.ActionLink("Economic Calender", "EconomicCalender", "Products")</li>
-                        <li>@Html.ActionLink("Mobile Platform", "MobilePlatform", "Products")</li>
-                        </div>
+                        <ul style="list-style-type:none">
+                            <li>@Html.ActionLink("Download", "Download", "Products")</li>
+                            <li>@Html.ActionLink("Economic Calender", "EconomicCalender", "Products")</li>
+                            <li>@Html.ActionLink("Mobile Platform", "MobilePlatform", "Products")</li>
+                        </ul>
                     </div>
                     <div class="col-md-2">
                         <h5>ACCOUNTS</h5>
-                        <div style="list-style-type:none">
-                        <li>@Html.ActionLink("Types of Accounts", "TypesofAccounts", "Accounts")</li>
-                        <li>@Html.ActionLink("Deposit & Withdrawals", "DepositandWithdrawals", "Accounts")</li>
-                        </div>
+                        <ul style="list-style-type:none">
+                            <li>@Html.ActionLink("Types of Accounts", "TypesofAccounts", "Accounts")</li>
+                            <li>@Html.ActionLink("Deposit & Withdrawals", "DepositandWithdrawals", "Accounts")</li>
+                        </ul>
                     </div>
                     <div class="col-md-2">
                         <h5>PROMOTIONS</h5>
-                        <div style="list-style-type:none">
-                        <li>@Html.ActionLink("Bonuses", "Bonuses", "Promotions")</li>
-                        <li>@Html.ActionLink("Promotions", "Promotions", "Promotions")</li>
-                        </div>
+                        <ul style="list-style-type:none">
+                            <li>@Html.ActionLink("Bonuses", "Bonuses", "Promotions")</li>
+                            <li>@Html.ActionLink("Promotions", "Promotions", "Promotions")</li>
+                        </ul>
                     </div>
                     <div class="col-md-2">
                         <h5>PARTNERSHIP</h5>
-                        <div style="list-style-type:none">
-                        <li>@Html.ActionLink("Affiliate Partnership", "AffiliatePartnership", "Partnership")</li>
-                        <li>@Html.ActionLink("Company Partnership", "CompanyPartnership", "Partnership")</li>
-                        </div>
+                        <ul style="list-style-type:none">
+                            <li>@Html.ActionLink("Affiliate Partnership", "AffiliatePartnership", "Partnership")</li>
+                            <li>@Html.ActionLink("Company Partnership", "CompanyPartnership", "Partnership")</li>
+                        </ul>
                     </div>
                 </div>
                 <hr/>
-                <img src="~/Content/Images/Fhorex.com (Official Logo) Gray Color.png" height="100px" width="170px"/>
+                <img src="~/Content/Images/Fhorex.com (Official Logo) Gray Color.png" style="margin-left: -28px;" width="170"/>
                 <br/>
                 @Html.ActionLink("Client Agreement", "ClientAgreement", "Downloads") &nbsp;&nbsp; @Html.ActionLink("Risk Disclosure", "RiskDisclosure", "Downloads") &nbsp;&nbsp; @Html.ActionLink("Anti-Money Laundering", "AntiMoneyLaundering", "Downloads")
                 <br/>
                 @Html.ActionLink("Legal Documents", "LegalDocuments", "Downloads") &nbsp;&nbsp; @Html.ActionLink("Terms & Condition", "TermsAndCondition", "Downloads")
                 <br/><br/>
-                <p>The Website of www.fhorex.com is operated by Fhorex Limited. (registered number 10955007 (CH 2017). Fhorex Limited is an International Business Company in 40 Gracechurch Street, London, United Kingdom, EC3V OBT. Fhorex Limited is a member of Fhorex Group; authorised and approved by FRSC.ORG.UK (Financial Regulation Service Commission). License Number 990740. Fhorex Limited operates the website www.fhorex.com. And registered in the United Kingdom government companies House.
-                Company Number: 10955007)</p>
+                <p>The Website of www.fhorex.com is operated by Fhorex Limited. <span style="color: greenyellow;">(registered number 10955007 (CH 2017).</span>
+    <span style="color: greenyellow;">Fhorex Limited is an International Business Company in 40 Gracechurch Street, London, United Kingdom, EC3V OBT.</span> Fhorex Limited is a member of Fhorex Group; authorised and approved by FRSC.ORG.UK (Financial Regulation Service Commission). License Number 990740. Fhorex Limited operates the website www.fhorex.com. And registered in the United Kingdom government companies House.
+                                                                                                                                                            <span style="color: greenyellow;">Company Number: 10955007)</span>
+</p>
                 <br />
                 <p>The information on this website may only be copied with the express written permission of Fhorex.
                    General Risk Warning: CFDs are leveraged products. Trading in CFDs carries a high level of risk thus may not be appropriate for all investors. The investment value can both increase and decrease and the investors may lose all their invested capital. Under no circumstances shall the company have any liability to any person or entity for any loss or damage in whole or part caused by, resulting from, or relating to any transactions related to CFDs.
